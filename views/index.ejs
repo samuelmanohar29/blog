@@ -1,0 +1,31 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I am Samuel.</h1>
+    <p class="author__body">Web developer and content creator.</p>
+</div>
+<img src="https://img.freepik.com/free-photo/black-white-portrait-digital-nomads_23-2151254008.jpg?t=st=1737047929~exp=1737051529~hmac=64ad514677017d07d486cabd62568d4e5514a1a84b46bd838b042c849ea90e25&w=996"
+    alt="working all night long" class="hero-image" width="981" height="528">
+    <section class="articles">
+        <h2 class="articles__heading">Latest Posts</h2>
+      
+        <ul class="article-ul">
+          <% data.forEach(post => { %>
+            <li>
+              <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      
+      
+        <% if (nextPage !== null) { %>
+          <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+        <% } %>
+       
+      
+        
+      
+      
+      
+      </section>
